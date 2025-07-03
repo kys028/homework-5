@@ -19,7 +19,7 @@ import use_case.signup.SignupUserDataAccessInterface;
 /**
  * DAO for user data implemented using a File to persist the data.
  */
-public class FileUserDataAccessObject implements SignupUserDataAccessInterface,
+public abstract class FileUserDataAccessObject implements SignupUserDataAccessInterface,
                                                  LoginUserDataAccessInterface,
                                                  ChangePasswordUserDataAccessInterface {
 
@@ -102,5 +102,10 @@ public class FileUserDataAccessObject implements SignupUserDataAccessInterface,
         // Replace the User object in the map
         accounts.put(user.getName(), user);
         save();
+    }
+
+    @Override
+    public void setCurrentUser(String name) {
+        // Not implemented in this version
     }
 }
