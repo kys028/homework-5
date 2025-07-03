@@ -106,6 +106,10 @@ public abstract class FileUserDataAccessObject implements SignupUserDataAccessIn
 
     @Override
     public void setCurrentUser(String name) {
-        // Not implemented in this version
+    }
+
+    @Override
+    public String getCurrentUser() {
+        return null;
     }
 }
